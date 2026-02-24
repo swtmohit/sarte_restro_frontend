@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCart } from "@/contexts/CartContext";
 import { useOrders } from "@/contexts/OrdersContext";
+import type { Order } from "@/contexts/OrdersContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Link from "next/link";
@@ -76,7 +77,7 @@ export default function CheckoutPage() {
       return;
     }
 
-    const order = {
+    const order: Order = {
       id: Date.now().toString(),
       items: cart,
       total,

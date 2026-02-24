@@ -31,6 +31,32 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+@layer base {
+  input,
+  textarea,
+  select {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-secondary);
+  }
+
+  /* Ensure autofill respects theme colors */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--card-bg) inset;
+    -webkit-text-fill-color: var(--text-primary);
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

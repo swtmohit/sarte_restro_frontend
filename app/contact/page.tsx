@@ -49,7 +49,7 @@ export default function ContactPage() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     }, 3000);
   };
 

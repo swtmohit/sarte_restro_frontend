@@ -6,22 +6,19 @@ interface User {
   email: string;
   firstName?: string;
   lastName?: string;
-  username?: string;
-  deliveryAddress?: string;
   phoneNumber?: string;
-  pinCode?: string;
   profilePicture?: string;
   name?: string; // Keep for backward compatibility
+  username?: string;
+  deliveryAddress?: string;
+  pinCode?: string;
 }
 
 export interface SignupData {
   firstName: string;
   lastName: string;
   email: string;
-  username: string;
-  deliveryAddress: string;
   phoneNumber: string;
-  pinCode: string;
   password: string;
   profilePicture?: string;
 }
@@ -69,10 +66,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           email: data.email,
           firstName: data.firstName,
           lastName: data.lastName,
-          username: data.username,
-          deliveryAddress: data.deliveryAddress,
           phoneNumber: data.phoneNumber,
-          pinCode: data.pinCode,
           profilePicture: data.profilePicture,
           name: `${data.firstName} ${data.lastName}`, // For backward compatibility
         };
